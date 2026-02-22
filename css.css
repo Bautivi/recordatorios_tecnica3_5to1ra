@@ -1,0 +1,219 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    overflow: hidden; /* 👈 esto */
+}
+
+:root {
+  --c1: #3586ff;
+  --c2: #81d5ff;
+  --c3: #285ef1;
+  --c4: rgb(45, 114, 252);
+}
+
+/* =========================
+   POSICIÓN DE TUS BOTONES
+   ========================= */
+.homeButtons {
+    position: absolute;
+    bottom: 3%;
+    z-index: 5;
+    border: none;
+    background: none;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lugares */
+#buttonHomework { left: 25%; }
+#buttonExams { left: 50%; }
+#buttonMeetings { left: 75%; }
+
+/* =========================
+   FONDO Y OLAS
+   ========================= */
+section {
+    position: relative;
+    width: 100%;
+    bottom: 2%;
+    height: 100vh;
+    background: linear-gradient(var(--c1), var(--c1), var(--c1), var(--c2));
+    overflow: hidden;
+}
+
+section .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url(wave.png);
+    background-size: 1000px 80px;
+}
+
+section .wave.wave1 {
+    animation: animate 30s linear infinite;
+    z-index: 4;
+    opacity: 1;
+    bottom: 0;
+}
+
+section .wave.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 3;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 8px;
+}
+
+section .wave.wave3 {
+    animation: animate 30s linear infinite;
+    z-index: 2;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 14px;
+}
+
+section .wave.wave4 {
+    animation: animate 5s linear infinite;
+    z-index: 1;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 18px;
+}
+
+@keyframes animate {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 1000px; }
+}
+
+@keyframes animate2 {
+    0% { background-position-x: 0; }
+    100% { background-position-x: -1000px; }
+}
+
+
+/* =========================
+   ESTÉTICA CTA
+   ========================= */
+.cta {
+  position: absolute;
+  padding: 0 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* espacio entre texto e icono */
+}
+
+/* circulito */
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  background: #fff;
+  border: 3px solid var(--c2);
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+  z-index: 0;
+  filter: drop-shadow(0 0 2px var(--c3));
+}
+
+/* texto que aparece */
+.cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  background: #fff;
+  width: 9px;
+  height: 21px;
+  transition: all 0.3s ease;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 12px 18px;
+  z-index: 2;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: left;
+}
+
+.cta:before,
+.cta::after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cta span {
+  position: relative;
+  color: var(--c1);
+  z-index: 2;
+  transition: .5s;
+}
+
+.cta svg {
+  position: relative;
+  fill: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: none;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  color: var(--c1); /* mismo azul que el texto */
+  transition: color 0.3s ease, transform 0.3s ease;
+  transform: translateX(-4px); /* probá valores */
+}
+
+/* animaciones */
+.cta:hover:before { width: 100%; background: var(--c2); }
+.cta:hover::after { width: 100%; }
+.cta:hover span { color: #fff; }
+.cta:hover .icon { color: #fff; }
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+#welcomeTitle {
+  position: relative;
+  top: 0;
+  left: 0;
+  background: var(--c1);
+  color: #fff;
+  z-index: 10;
+}
+
+#roomTitle {
+  position: absolute;
+  top: 1%;
+  left: 47%;
+  background: var(--c1);
+  color: var(--c2);
+  font-size: 28px;
+  z-index: 10;
+}

@@ -1,0 +1,184 @@
+#taskContainer {
+    position: absolute;
+    width: 75%;
+    height: 77%;
+    top: 9%;
+    left: 24%;
+    z-index: 999;
+    column-gap: 70px;
+    row-gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 170px);
+    align-content: start;
+    justify-items: start;
+}
+
+.tasks {
+    position: relative;
+    width: 220px;
+    height: 140px;
+    border-radius: 8px;
+    border: 3px solid #fff;
+    background: #fff;
+    word-break: break-word;
+    box-shadow: 0 0 10px var(--c3); /* The glowing effect */
+}
+
+.tasks .tasksNumber {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    word-break: break-word;
+    color: #ffffff;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    border-radius: 2px;
+    align-content: center;
+}
+
+.tasks .tasksSubject {
+    position: relative;
+    width: 168px;
+    height: 20px;
+    top: -12%;
+    left: 10%;
+    font-size: 15px;
+    word-break: break-word;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800px;
+    border-radius: 6px;
+}
+
+.tasks .tasksLogo {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    top: -40%;
+    left: 90%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--c3); /* The glowing effect */
+}
+
+.tasks .tasksDate {
+    position: relative;
+    width: 64px;
+    height: 32px;
+    top: 40%;
+    left: 80%;
+    color: #4f4d81;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+
+
+.noTasksMessage {
+    position: absolute;
+    top: 44%;
+    left: 44%;
+    background: var(--c1);
+    color: var(--c2);
+    font-size: 28px;
+    z-index: 10;
+}
+
+.inputDateDay {
+    background: red; 
+    position: absolute; 
+    width: 32px;
+    height: 32px;
+    left: 48%;
+    top: 50%;
+    z-index: 1000;
+}
+
+.inputDateMonth {
+    background: red; 
+    position: absolute; 
+    width: 32px;
+    height: 32px;
+    left: 52%;
+    top: 50%;
+    z-index: 1000;
+}
+
+.inputTitle {
+    background: red; 
+    position: absolute; 
+    width: 80px;
+    height: 28px;
+    left: 50%;
+    top: 56%;
+    z-index: 1000;
+}
+
+.inputSubject {
+    background: red; 
+    position: absolute; 
+    width: 80px;
+    height: 28px;
+    left: 50%;
+    top: 62%;
+    z-index: 1000;
+}
+
+#circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    transform: rotate(-90deg);
+}
+
+#progressCircle {
+    stroke: #00ff8c;
+    filter: drop-shadow(0 0 2px #00ff8c);
+}
+
+#bgCircle {
+    stroke: #fff;
+}
+
+#sideBar {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    z-index: 1000;
+}
+
+#faceContainer {
+    position: fixed;
+    top: 16.6%;
+    left: 6.5%;
+    z-index: 1001;
+}
+
+@keyframes enter {
+    0% {
+    top: 14%;
+    left: 5.4%;
+    transform: rotate(10deg);
+    }
+    50% {
+    top: 19%;
+    left: 6%;
+    transform: rotate(3deg);
+    }
+    100% {
+    top: 16.6%;
+    left: 6.5%;
+    transform: rotate(0deg);
+    }
+}
+
+#faceContainer.animate {
+    animation: enter 2s;
+}

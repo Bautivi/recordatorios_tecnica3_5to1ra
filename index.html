@@ -1,74 +1,103 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Escolar</title>
-    <!--main font-->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <!--charge style.css file-->
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="tasks.css">
+    <audio id="sfxHomeButtonReleased" src="homeButtonReleased.mp3"></audio>
 </head>
-    <body class="body">
-        <div id="filter"></div>
-        <!--particles-->
-    <canvas id="particlesCanvas"></canvas>
-    <img id="sad_face" src="sad_face.png" alt="Sad face" style="display:none;">
-        <!--task-box logo-->
-    <img id="materia_historia" src="materia_historia.png" style="display:none;">
-        <!--click-circle effect-->
-        <div id="circle"></div>
-        <!--top message-->
-        <div id="welcome">¡Hola, estudiante!</div>
-        <div id="line"></div>
-        <div id="rectangle"></div>
-        <div id="contenedor_de_tareas"></div>
-        <div id="contenedor_de_logo"></div>
-        <div id="green_rectangle_top"></div>
-        <!--add-task button-->
-        <div id="boton_fijo_up_bar" class="botones_fijos"></div>
-        <button id="boton_fijo_1" class="botones_fijos"></button>
-        <div id="boton_fijo_1_bg" class="botones_fijos"></div>
-        <button id="boton_fijo_2" class="botones_fijos">!</button>
-        <p id="boton_fijo_1_txt" class="botones_fijos">Añadir tarea</p>
-        <p id="boton_fijo_2_txt" class="botones_fijos">Exámenes</p>
+<body>
 
-        <!--submenu region-->
-        <div id="submenu_1">
-            <h1 id="submenu_titulo_1">Añadir tarea</h1>
-            <input id="input_submenu_1" class="input_submenu" type="text" placeholder="ej: Ejercicio 1, Trigonometría">
-            <h2 id="submenu_titulo_2">Materia:</h2>
-        <div id="dropdown_1" class="dropdown">
-        <button id="dropbtn_1" class="dropbtn">Seleccionar</button>
-        <div id="dropdown_content_1" class="dropdown-content">
-            <a href="#">Física</a>
-            <a href="#">Geografía</a>
-            <a href="#">Historia</a>
-            <a href="#">Literatura</a>
-            <a href="#">Matemática</a>
-            <a href="#">Química</a>
-            <a href="#">SADO</a>
-            <a href="#">Tecnología</a>   
-            <a href="#">Inglés</a>                                               
-        </div>
+  <svg width="120" height="120" viewBox="0 0 150 150" id="faceContainer">
+
+  <g id="face">
+    <line id="faceLeftEye" x1="65" y1="60" x2="29" y2="65"
+          stroke="#00ff8c" stroke-width="7" stroke-linecap="round"/>
+    <line id="faceRightEye" x1="95" y1="60" x2="131" y2="65"
+          stroke="#00ff8c" stroke-width="7" stroke-linecap="round"/>
+    <path id="faceMouth" d="M55 90 Q80 110 105 90"
+          stroke="#00ff8c" stroke-width="7" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
+
+    <div id="circle">
+    <svg>
+  <circle id="bgCircle"
+    cx="65" 
+    cy="75"
+    r="60"
+    stroke-width="10"
+    fill="none"
+  /> <!-- cx= X coord from the center.
+          cx= Y coord from the center. 
+          r= Radio. 
+          stroke= Border color. 
+          stroke-width= Border weight. -->
+  
+  <circle id="progressCircle"
+    cx="75"
+    cy="75"
+    r="60"
+    stroke-width="12"
+    fill="none"
+  />
+</svg>
+</div>
+
+<div id="sideBar"></div>
+
+    <div id="welcomeTitle"></div>
+    <div id="roomTitle"></div>
+    <div id="taskAmountTitle"></div>
+
+    <div id="box"></div>
+
+    <div id="taskContainer">
+        
     </div>
-    <h3 id="submenu_titulo_3">Fecha de entrega</h3>
-    <div class="fecha-container">
-        <!-- Día (solo 1–31) -->
-        <input type="number" id="fecha_dia" placeholder="Día" min="1" max="31">
-        <input type="number" id="fecha_mes" placeholder="Mes" min="1" max="12">
-    </div>
-            <button id="botón_submenu_listo">Listo</button>
-            <button id="submenu_botón_salir">X</button>
-    </div>
-    </div>
-        <!--charge processes.js file-->
-        <script src="js/elements.js"></script>
-        <script src="js/events.js"></script>
-        <script src="js/submenu.js"></script>
-        <script src="js/visual effects/particles.js"></script>
-        <script src="js/visual effects/ripple.js"></script>
-        <script src="js/hotbar.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+
+    <div id="inputContainer"></div>
+    
+    <button class="homeButtons cta" id="buttonHomework">
+        <span></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon" viewBox="0 0 16 16">
+  <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z"/>
+  <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0M7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0"/>
+</svg>
+    </button>
+
+    <button class="homeButtons cta" id="buttonExams">
+        <span></span>
+        <svg class="icon" viewBox="0 0 16 16" fill="currentColor">
+  <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"/>
+</svg>
+    </button>
+
+    <button class="homeButtons cta" id="buttonMeetings">
+    <span></span>
+    </button>
+
+
+    <section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+    </section>
+    </a>
+
+    <script src="python.py"></script>
+    <script src="HTMLtoJS.js"></script>
+    <script src="roomManage.js"></script>
+    <script src="buttons.js"></script>
+    <script src="randomWelcomeTitle.js"></script>
+    <script src="taskPrimitives.js"></script>
+    <script src="input.js"></script>
+    <script src="ui.js"></script>
+    <script src="taskDataManage.js"></script>
+    <script src="sideBar.js"></script>
+    <script src="main.js"></script>
+</body>
 </html>

@@ -1,0 +1,11 @@
+El usuario presiona "+"
+
+UI crea inputs
+
+Usuario confirma
+
+addTask() modifica webState
+
+UI renderiza usando datos de webState
+
+sideBar calcula progreso usando webState
